@@ -16,8 +16,8 @@ class CreateHaddocksTable extends Migration
         Schema::create('quotes_haddock', function (Blueprint $table) {
             $table->id();
             $table->string('quote');
-            $table->integer('likes');
-            $table->integer('dislikes');
+            $table->integer('likes')->default(0);
+            $table->integer('dislikes')->default(0);
             $table->timestamps();
         });
     }
