@@ -47,8 +47,8 @@
                 quoteid: 0,
 
                 // Misc
-                // TODO - Author info box
-                github: 'https://github.com/PatricNox',
+                // TODO - Put this is in a config file
+                github: 'https://github.com/PatricNox/HaddockSvordomar.se',
                 // TODO - Dynamic site selection based on tenant
                 site: 'haddock',
             }
