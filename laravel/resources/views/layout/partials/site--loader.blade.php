@@ -1,7 +1,7 @@
 <div id="loader" class="loader-indicator--wrapper">
     <div class="flex-center position-ref full-height">
         <div class="content">
-            <div class="title m-b-md noselect">
+            <div class="title m-b-md noselect loading-title">
                 {{ config('app.name') }}
                 <noscript>
                     <br/>

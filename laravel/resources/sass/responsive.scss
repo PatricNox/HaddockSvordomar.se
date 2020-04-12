@@ -1,0 +1,52 @@
+@media (max-width: 350px) {
+    .loading-title {
+        font-size: 4vh;
+    }
+
+    .quote-wrapper {
+        a {
+            width: 0;
+
+            .site--info {
+                position: absolute;
+            }
+        }
+
+        .site--character {
+            left: unset;
+            top: 50%;
+            height: 24rem;
+        }
+
+        .site--quote {
+            margin: 0;
+            bottom: 30vh;
+            position: relative;
+            .quote {
+                font-size: 2rem;
+            }
+
+            .title {
+                min-width: 5em;
+            }
+
+            .site--quote-info div {
+                bottom: 3vh;
+                left: 3vh;
+                position: relative;
+            }
+
+            .site--quote-rating {
+                right: 10.8vh;
+                top: 8vh;
+                transform: scale(1.45);
+            }
+         }
+         .site--quote-likes {
+             width: 100%;
+             font-size: 1.15em;
+             background: black;
+             color: white;
+         }
+    }
+}
