@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Haddock;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('application');
+});
+
+Route::get('/tenant-data', function () {
+    return response()->json(Haddock::all(), 200);
 });

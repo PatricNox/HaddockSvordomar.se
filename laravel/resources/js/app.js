@@ -7,7 +7,6 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
-
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -27,4 +26,17 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
 
 const app = new Vue({
     el: '#app',
+});
+
+
+/**
+ * Finally, we include all the custom scripts we got and wait for the DOM to
+ * be ready before we load the scripts.
+ */
+
+import * as core from './core/app';
+
+// Load site when it's ready.
+core.waitUntilDOMReady(function() {
+    core.removeLoader();
 });

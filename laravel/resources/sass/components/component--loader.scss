@@ -1,0 +1,16 @@
+/*
+* Loader component
+*/
+
+// Wrapper for the loader
+.loader-indicator--wrapper {
+    background-color: $body-bg;
+    height: 100vw;
+    left: 0;
+    position: fixed;
+    top: 0;
+    transition: opacity .2s ease;
+    width: 100vw;
+    z-index: 100;
+    text-align: center;
+}

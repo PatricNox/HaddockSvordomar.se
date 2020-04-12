@@ -8,52 +8,61 @@
 @import '~bootstrap/scss/bootstrap';
 
 // Layout
-html, body {
-    background-color: #fff;
-    color: #636b6f;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 200;
-    height: 100vh;
-    margin: 0;
-}
+@import 'layout';
 
-.full-height {
-    height: 100vh;
-}
+// Components
+@import 'components/component--loader';
 
-.flex-center {
-    align-items: center;
+// Content
+.quote-wrapper {
     display: flex;
     justify-content: center;
+    padding: 5%;
+    width: 80%;
+    transition: all 0.65s ease;
+
+    // Site character
+    .site--character {
+        transition: all 0.65s ease;
+        display: block;
+        width: 100%;
+        left: 4%;
+        position: fixed;
+        height: 34rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    // Characters
+    .haddock {
+        background-image: url('./characters/haddock.png');
+    }
+
+    // Quote
+    .site--quote {
+        margin: 0 0 14vw 44vh;
+
+        // Quote content
+        .quote {
+            display: inline-table;
+            min-width: 400px;
+            word-break: break-word;
+            max-width: 35rem;
+            transition: all 0.65s ease;
+            font-size: 7vw;
+        }
+
+        // Quote info
+        .site--quote-info {
+            display: inline-table;
+            white-space: nowrap;
+
+            div {
+                font-size: 2.4vh;
+                width: 6rem;
+            }
+        }
+    }
 }
 
-.position-ref {
-    position: relative;
-}
-
-.top-right {
-    position: absolute;
-    right: 10px;
-    top: 18px;
-}
-
-.content {
-    text-align: center;
-}
-
-.title {
-    font-size: 3.5em;
-}
-
-.m-b-md {
-    margin-bottom: 30px;
-}
-
-.noselect {
-    -webkit-touch-callout: none;
-      -webkit-user-select: none;
-       -khtml-user-select: none;
-         -moz-user-select: none;
-          -ms-user-select: none;
-            user-select: none;
-  }
+// Responsive adaptions
