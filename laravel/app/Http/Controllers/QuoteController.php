@@ -24,9 +24,9 @@ class QuoteController extends Controller
      *   The current quote that is displayed. Implictly binded.
      * @param Request $request
      *
-     * @return int
+     * @return Haddock
      */
-    public function vote(Haddock $id, Request $Request): int
+    public function vote(Haddock $id, Request $Request): Haddock
     {
         // Update like / dislike amount.
         switch ($Request->input('likedQuote')) {
@@ -39,6 +39,6 @@ class QuoteController extends Controller
         }
 
         $id->save();
-        return 200;
+        return $id;
     }
 }

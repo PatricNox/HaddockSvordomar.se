@@ -116,6 +116,14 @@
             }
         }
     }
+
+    // Amount of likes for the current quote
+    .site--quote-likes {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        right: 1.5vw;
+    }
 }
 
 // Responsive adaptions

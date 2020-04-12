@@ -22,6 +22,7 @@
                     <span class="rating rate-negative" @click="vote('dislike')"><i class="fas fa-thumbs-down" :class="{ 'red' : liked == false}"></i></span>
                 </div>
             </div>
+            <span class="site--quote-likes">{{ likes }} gillar denna svordom!</span>
         </div>
     </div>
 </template>
@@ -33,11 +34,19 @@
         },
         data () {
             return {
+                // Conditions
+                liked: null,
+
+                // Stores
                 quotes: '',
+                likes: '',
+                quoteAmount: 0,
+
+                // Data
                 quote: '',
                 quoteid: 0,
-                quoteAmount: 0,
-                liked: null,
+
+                // Misc
                 // TODO - Author info box
                 github: 'https://github.com/PatricNox',
                 // TODO - Dynamic site selection based on tenant
@@ -60,6 +69,9 @@
                             // Store the random quote's id.
                             this.quoteid = randomQuote.id,
 
+                            // Store the random quote's likes.
+                            this.likes = this.parseLikes(randomQuote.likes),
+
                             // Get the total amount of quotes.
                             this.quoteAmount = response.data.length
                         )
@@ -72,6 +84,7 @@
                 this.quote = newQuote.quote + '!';
                 this.quoteid = newQuote.id;
                 this.liked = null;
+                this.likes = this.parseLikes(newQuote.likes);
             },
 
             /* Select a random element from the data array. */
@@ -87,15 +100,34 @@
                     return;
                 }
 
+                // Update backend.
                 let userDecision = (type === 'like') ? true : false;
                 axios
                     .post('/quotes/vote/' + this.quoteid, {
                         likedQuote: userDecision,
                     })
                     .then(response => (
-                            this.liked = userDecision
+                            this.liked = userDecision,
+                            this.likes = this.parseLikes(response.data.likes)
                         )
-                    )
+                    );
+            },
+
+            /* Parse like amount. */
+            parseLikes(likesAmount) {
+                // TODO - Transliteration
+                switch (likesAmount) {
+                    // Grammar for no likes.
+                    case 0:
+                        return 'Inga kaptener';
+
+                    // Grammar for One like.
+                    case 1:
+                        return 'En kapten';
+
+                    default:
+                        return likesAmount + ' kaptener';
+                }
             }
         }
     }
