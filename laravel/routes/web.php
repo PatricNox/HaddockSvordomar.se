@@ -18,6 +18,15 @@ Route::get('/', function () {
     return view('application');
 });
 
-Route::get('/tenant-data', function () {
-    return response()->json(Haddock::all(), 200);
-});
+Route::group(
+    array('prefix' => 'quotes'),
+    function() {
+        // Load all quotes.
+        Route::get('/data', function () {
+            // TODO - tenant specific data
+            return response()->json(Haddock::all(), 200);
+        });
+        // Vote for the current quote.
+        Route::post('/vote/{id}', 'QuoteController@vote');
+    }
+);

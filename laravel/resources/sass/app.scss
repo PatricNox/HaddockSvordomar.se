@@ -6,6 +6,9 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
 
 // Layout
 @import 'layout';
@@ -38,6 +41,20 @@
         background-image: url('./characters/haddock.png');
     }
 
+    // Refresh quote
+    a {
+        z-index: 2;
+
+        .site--info {
+            display: block;
+            width: 2em;
+            height: 2em;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+    }
+
     // Quote
     .site--quote {
         margin: 0 0 14vw 44vh;
@@ -46,10 +63,14 @@
         .quote {
             display: inline-table;
             min-width: 400px;
-            word-break: break-word;
-            max-width: 35rem;
+            max-width: 25rem;
             transition: all 0.65s ease;
-            font-size: 7vw;
+            font-size: 4em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+            line-height: 1em;
+            max-height: 2em;
         }
 
         // Quote info
@@ -60,6 +81,38 @@
             div {
                 font-size: 2.4vh;
                 width: 6rem;
+            }
+        }
+
+        // Quote rating
+        .site--quote-rating {
+            position: relative;
+            right: 13vh;
+            display: inline-flex;
+            top: 10vh;
+
+            .green {
+                color: rgb(1, 235, 1);
+            }
+
+            .red {
+                color: red;
+            }
+
+            .rating {
+                display: block;
+                width: 20px;
+                height: 20px;
+                transition: all 0.25s ease;
+
+                &:nth-child(2) {
+                    margin-left: 2vh;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.2);
+                }
             }
         }
     }
