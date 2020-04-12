@@ -37,5 +37,14 @@ Just make sure to read the [Contribution Guidelines](CONTRIBUTIONS.md) first.
 
 ## Credits
 
-[MIT](License) © 2020 - PatricNox
+[MIT](License) © 2020 - PatricNox and other contributors
 > hello@patricnox.info
+
+
+### Package Licenses
+
+* [Bootstrap License](laravel/public/js/app.js.LICENSE.txt) © 2011-2019 - The Bootstrap Authors 
+* [Vue.js License](laravel/public/js/app.js.LICENSE.txt) © 2014-2019 - Evan You
+* [JQuery License](laravel/public/js/app.js.LICENSE.txt) © JS Foundation and other contributors
+* [Lodash License](laravel/public/js/app.js.LICENSE.txt) © OpenJS Foundation and other contributors
+* [Kickass Lib License](laravel/public/js/app.js.LICENSE.txt) © 2016 - Federico Zivolo and contributors
