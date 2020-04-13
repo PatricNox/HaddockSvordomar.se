@@ -16997,8 +16997,13 @@ body {
 
 .quote-wrapper .site--info {
   position: absolute;
+  z-index: 100;
   top: 0;
   left: 0;
+}
+
+.quote-wrapper .site--character {
+  pointer-events: none;
 }
 
 .quote-wrapper .site--character img {
@@ -17012,16 +17017,25 @@ body {
   margin-bottom: 12rem;
 }
 
+.quote-wrapper .site--quote .quote {
+  font-size: 6vh;
+}
+
 .quote-wrapper .site--quote .site--quote-info {
-  font-size: 3vw;
+  font-size: 4vh;
 }
 
 .quote-wrapper .site--quote .site--quote-rating .rating {
-  font-size: 5vw;
+  z-index: 99999;
+  font-size: 3vh;
+}
+
+.quote-wrapper .site--quote .site--quote-rating .rating:hover {
+  cursor: pointer;
 }
 
 .quote-wrapper .site--quote .site--quote-rating span:nth-last-of-type(1) {
-  margin-left: 2vw;
+  margin-left: 1vh;
 }
 
 .quote-wrapper .site--quote-likes {
@@ -17035,5 +17049,32 @@ body {
   .loading-title {
     font-size: 4vh;
   }
+}
+
+@media screen and (min-device-width: 1024px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .quote-wrapper .site--character img {
+    width: 38%;
+  }
+
+  .quote-wrapper .site--quote .quote {
+    font-size: 10vh;
+  }
+
+  .quote-wrapper .site--quote .site--quote-info {
+    font-size: 3vh;
+  }
+
+  .quote-wrapper .site--info {
+    top: 4%;
+    left: 50%;
+  }
+}
+
+.green {
+  color: lightgreen;
+}
+
+.red {
+  color: red;
 }
 

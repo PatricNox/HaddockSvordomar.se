@@ -26,11 +26,14 @@ body {
 .quote-wrapper {
     .site--info {
         position: absolute;
+        z-index: 100;
         top: 0;
         left: 0;
     }
 
     .site--character {
+        pointer-events: none;
+
         img {
             left: 16vw;
             position: absolute;
@@ -42,17 +45,26 @@ body {
     .site--quote {
         margin-bottom: 12rem;
 
+        .quote {
+            font-size: 6vh;
+        }
+
         .site--quote-info {
-            font-size: 3vw;
+            font-size: 4vh;
         }
 
         .site--quote-rating {
             .rating {
-                font-size: 5vw;
+                z-index: 99999;
+                font-size: 3vh;
+
+                &:hover {
+                    cursor: pointer;
+                }
             }
 
             span:nth-last-of-type(1) {
-                margin-left: 2vw;
+                margin-left: 1vh;
             }
         }
     }
@@ -67,3 +79,12 @@ body {
 
 // Responsive adaptions
 @import 'responsive';
+
+// Settings
+.green {
+    color: lightgreen;
+}
+
+.red {
+    color: red;
+}

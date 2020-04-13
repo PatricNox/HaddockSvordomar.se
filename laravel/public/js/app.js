@@ -38174,29 +38174,21 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "flex-center position-ref full-height" }, [
-    _c("div", { staticClass: "content quote-wrapper" }, [
-      _c("a", { staticClass: "site--info", attrs: { href: _vm.github } }, [
-        _vm._m(0)
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "site--quote" }, [
-        _c(
-          "div",
-          {
-            staticClass: "title quote m-b-md noselect",
-            on: { click: _vm.changeQuote }
-          },
-          [_vm._v("\n                " + _vm._s(_vm.quote) + "\n            ")]
-        ),
+    _c(
+      "div",
+      { staticClass: "content quote-wrapper", on: { click: _vm.changeQuote } },
+      [
+        _c("a", { staticClass: "site--info", attrs: { href: _vm.github } }, [
+          _vm._m(0)
+        ]),
         _vm._v(" "),
-        _vm.quote
-          ? _c(
-              "span",
-              {
-                staticClass: "site--quote-info",
-                on: { click: _vm.changeQuote }
-              },
-              [
+        _c("div", { staticClass: "site--quote" }, [
+          _c("div", { staticClass: "title quote m-b-md noselect" }, [
+            _vm._v("\n                " + _vm._s(_vm.quote) + "\n            ")
+          ]),
+          _vm._v(" "),
+          _vm.quote
+            ? _c("span", { staticClass: "site--quote-info" }, [
                 _c("div", [
                   _vm._v("\n                    Svordom\n                    "),
                   _c("p", [
@@ -38209,59 +38201,59 @@ var render = function() {
                     )
                   ])
                 ])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("div", { staticClass: "site--quote-rating" }, [
+            _c(
+              "span",
+              {
+                staticClass: "rating rate-plus",
+                on: {
+                  click: function($event) {
+                    $event.stopPropagation()
+                    return _vm.vote("like")
+                  }
+                }
+              },
+              [
+                _c("i", {
+                  staticClass: "fas fa-thumbs-up",
+                  class: { green: _vm.liked == true }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "span",
+              {
+                staticClass: "rating rate-negative",
+                on: {
+                  click: function($event) {
+                    $event.stopPropagation()
+                    return _vm.vote("dislike")
+                  }
+                }
+              },
+              [
+                _c("i", {
+                  staticClass: "fas fa-thumbs-down",
+                  class: { red: _vm.liked == false }
+                })
               ]
             )
-          : _vm._e(),
+          ])
+        ]),
         _vm._v(" "),
-        _c("div", { staticClass: "site--quote-rating" }, [
-          _c(
-            "span",
-            {
-              staticClass: "rating rate-plus",
-              on: {
-                click: function($event) {
-                  return _vm.vote("like")
-                }
-              }
-            },
-            [
-              _c("i", {
-                staticClass: "fas fa-thumbs-up",
-                class: { green: _vm.liked == true }
-              })
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "span",
-            {
-              staticClass: "rating rate-negative",
-              on: {
-                click: function($event) {
-                  return _vm.vote("dislike")
-                }
-              }
-            },
-            [
-              _c("i", {
-                staticClass: "fas fa-thumbs-down",
-                class: { red: _vm.liked == false }
-              })
-            ]
-          )
+        _c("span", { staticClass: "site--character" }, [
+          _c("img", { attrs: { src: _vm.character } })
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "site--quote-likes" }, [
+          _vm._v(_vm._s(_vm.likes) + " gillar denna svordom!")
         ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "span",
-        { staticClass: "site--character", on: { click: _vm.changeQuote } },
-        [_c("img", { attrs: { src: _vm.character } })]
-      ),
-      _vm._v(" "),
-      _c("span", { staticClass: "site--quote-likes" }, [
-        _vm._v(_vm._s(_vm.likes) + " gillar denna svordom!")
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [

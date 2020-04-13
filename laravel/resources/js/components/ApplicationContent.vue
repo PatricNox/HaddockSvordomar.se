@@ -1,13 +1,13 @@
 <template>
     <div class="flex-center position-ref full-height">
-        <div class="content quote-wrapper">
+        <div class="content quote-wrapper" @click='changeQuote'>
             <a :href='github' class="site--info"><span class="site--link"><i class="fab fa-github"></i></span></a>
             <div class="site--quote">
-                <div class="title quote m-b-md noselect" @click='changeQuote'>
+                <div class="title quote m-b-md noselect">
                     <!-- TODO - Transliteration -->
                     {{ quote }}
                 </div>
-                <span v-if="quote" class="site--quote-info" @click='changeQuote'>
+                <span v-if="quote" class="site--quote-info">
                     <div>
                         <!-- TODO - Transliteration -->
                         Svordom
@@ -17,11 +17,11 @@
                     </div>
                 </span>
                 <div class="site--quote-rating">
-                    <span class="rating rate-plus" @click="vote('like')"><i class="fas fa-thumbs-up" :class="{ 'green' : liked == true}"></i></span>
-                    <span class="rating rate-negative" @click="vote('dislike')"><i class="fas fa-thumbs-down" :class="{ 'red' : liked == false}"></i></span>
+                    <span class="rating rate-plus" @click.stop="vote('like')"><i class="fas fa-thumbs-up" :class="{ 'green' : liked == true}"></i></span>
+                    <span class="rating rate-negative" @click.stop="vote('dislike')"><i class="fas fa-thumbs-down" :class="{ 'red' : liked == false}"></i></span>
                 </div>
             </div>
-            <span class="site--character" @click='changeQuote'>
+            <span class="site--character">
                 <img :src="character" />
             </span>
             <span class="site--quote-likes">{{ likes }} gillar denna svordom!</span>
