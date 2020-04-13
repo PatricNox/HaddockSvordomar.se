@@ -24,7 +24,7 @@
             <span class="site--character">
                 <img :src="character" />
             </span>
-            <span class="site--quote-likes">{{ likes }} gillar denna svordom!</span>
+            <span class="site--quote-likes noselect">{{ likes }} gillar denna svordom!</span>
         </div>
     </div>
 </template>
