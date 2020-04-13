@@ -3,6 +3,9 @@
         <div class="content">
             <div class="title m-b-md noselect loading-title">
                 {{ config('app.name') }}
+                <br/>
+                {{-- TODO - Tenant specific (svordom) --}}
+                <small>{{ __('Tryck för att ändra svordom!') }}</small>
                 <noscript>
                     <br/>
                     {{ __('noJavaScriptMessage' )}}
