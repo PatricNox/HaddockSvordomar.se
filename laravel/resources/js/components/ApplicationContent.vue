@@ -1,8 +1,7 @@
 <template>
     <div class="flex-center position-ref full-height">
         <div class="content quote-wrapper">
-            <a :href='github'><span class="site--info"><i class="fab fa-github"></i></span></a>
-            <span :class="'site--character ' + site" @click='changeQuote'></span>
+            <a :href='github' class="site--info"><span class="site--link"><i class="fab fa-github"></i></span></a>
             <div class="site--quote">
                 <div class="title quote m-b-md noselect" @click='changeQuote'>
                     <!-- TODO - Transliteration -->
@@ -22,6 +21,9 @@
                     <span class="rating rate-negative" @click="vote('dislike')"><i class="fas fa-thumbs-down" :class="{ 'red' : liked == false}"></i></span>
                 </div>
             </div>
+            <span class="site--character" @click='changeQuote'>
+                <img :src="character" />
+            </span>
             <span class="site--quote-likes">{{ likes }} gillar denna svordom!</span>
         </div>
     </div>
@@ -41,6 +43,7 @@
                 quotes: '',
                 likes: '',
                 quoteAmount: 0,
+                character: "./images/haddock.png",
 
                 // Data
                 quote: '',
