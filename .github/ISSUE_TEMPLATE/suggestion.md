@@ -1,7 +1,7 @@
 ---
 name: Suggestion
 about: Suggest an idea for this project
-title: "[Suggestion] "
+title: "[Suggestion]: "
 labels: enhancement
 assignees: ''
 
@@ -15,3 +15,6 @@ A clear and concise description of what you want to happen.
 
 **Additional context**
 Add any other context or screenshots about the feature request here, if applicable.
+
+**Dev** 
+What does the developer need to use in order to accomplish a resolution? Eg. Frontend/backend.

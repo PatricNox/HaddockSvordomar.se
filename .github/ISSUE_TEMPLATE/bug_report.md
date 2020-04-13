@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Create a report if something seems off
-title: ''
+title: "[Bug]: "
 labels: bug
 assignees: ''
 
@@ -20,3 +20,6 @@ A clear and concise description of what the bug is.
 
 **Additional context**
 Add any other context about the problem here, if applicable.
+
+**Dev** 
+What does the developer need to use in order to accomplish a resolution? Eg. Frontend/backend.
