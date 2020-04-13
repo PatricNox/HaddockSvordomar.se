@@ -7,7 +7,7 @@
                     <!-- TODO - Transliteration -->
                     {{ quote }}
                 </div>
-                <span v-if="quote" class="site--quote-info">
+                <span v-if="quote" class="site--quote-info noselect">
                     <div>
                         <!-- TODO - Transliteration -->
                         Svordom
